@@ -1,13 +1,13 @@
 """
 Formula 1 Race Intelligence Dashboard - Flask Application Engine
 ================================================================
-Author / Lead Developer: Kushagra Khatri
-Tableau Public Profile : kushagra khatri
-Published Workbook     : F1RACEStory
+Author / Lead Developer: Srishti Rathore
+Tableau Public Profile : srishti rathore
+Published Workbook     : F1RaceIntelligenceDashboard / F1RACEStory1
 Championship Story     : Formula 1 Race Intelligence: From Global Overview to Championship Success
 
 This module serves the interactive Formula 1 Race Intelligence web application,
-providing dynamic rendering of the dark telemetry interface, embedded Tableau Public
+providing dynamic rendering of the dark telemetry interface, embedded Tableau
 visualizations, and RESTful telemetry data endpoints.
 """
 
@@ -30,20 +30,21 @@ app = Flask(
 )
 
 # ==============================================================================
-# CONFIGURATION SETTINGS & TABLEAU PUBLIC URLS
+# CONFIGURATION SETTINGS & TABLEAU CLOUD / PUBLIC URLS
 # ==============================================================================
 CONFIG = {
-    "AUTHOR_NAME": "Kushagra Khatri",
-    "AUTHOR_HANDLE": "kushagra khatri",
-    "WORKBOOK_NAME": "F1RACEStory",
+    "AUTHOR_NAME": "Srishti Rathore",
+    "AUTHOR_HANDLE": "srishti rathore",
+    "WORKBOOK_NAME": "F1RaceIntelligenceDashboard",
+    "STORY_WORKBOOK_NAME": "F1RACEStory1",
     "DASHBOARD_SHEET": "FORMULA 1 RACE INTELLIGENCE DASHBOARD",
     "STORY_SHEET": "Formula 1 Race Intelligence: From Global Overview to Championship Success",
     
-    # Live Tableau Public URLs provided by Kushagra Khatri
-    "TABLEAU_DASHBOARD_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1",
-    "TABLEAU_STORY_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=2",
-    "TABLEAU_DASHBOARD_EMBED_URL": "https://prod-in-a.online.tableau.com/t/en25cs3090103-eee6cffe8d/views/F1RACEStory/FORMULA1RACEINTELLIGENCEDASHBOARD?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false",
-    "TABLEAU_STORY_EMBED_URL": "https://prod-in-a.online.tableau.com/t/en25cs3090103-eee6cffe8d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false",
+    # Live Tableau Cloud URLs configured for Srishti Rathore
+    "TABLEAU_DASHBOARD_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3",
+    "TABLEAU_STORY_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=1",
+    "TABLEAU_DASHBOARD_EMBED_URL": "https://prod-in-a.online.tableau.com/t/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false",
+    "TABLEAU_STORY_EMBED_URL": "https://prod-in-a.online.tableau.com/t/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false",
     
     # 4 Core KPI Ground Truth
     "KPIS": {
@@ -60,42 +61,42 @@ CONFIG = {
             "title": "Circuit Analysis",
             "icon": "fa-solid fa-route",
             "desc": "Track-by-track spatial and telemetry fingerprinting across 29 world circuits from Monza's high-speed straights to Bahrain's desert braking zones.",
-            "stat": "→ 29 HOST CIRCUITS MAPPED"
+            "stat": "29 HOST CIRCUITS MAPPED"
         },
         {
             "id": "lap_time",
             "title": "Lap Time Breakdown",
             "icon": "fa-solid fa-stopwatch-20",
             "desc": "Millisecond-level telemetry analyzing sector splits (S1, S2, S3), qualifying delta margins, apex minimum speeds, and purple lap frequency.",
-            "stat": "→ MILLISECOND PRECISION & SECTOR SPLITS"
+            "stat": "MILLISECOND PRECISION & SECTOR SPLITS"
         },
         {
             "id": "tyre_strategy",
             "title": "Tyre Strategy",
             "icon": "fa-solid fa-compact-disc",
             "desc": "Degradation curves and compound usage share across 4 official Pirelli specifications: Soft (31.52%), Medium (30.78%), Hard (30.36%), and Inter (7.34%).",
-            "stat": "→ 4 TELEMETRY COMPOUNDS IN PLAY"
+            "stat": "4 TELEMETRY COMPOUNDS IN PLAY"
         },
         {
             "id": "driver_h2h",
             "title": "Driver Head-to-Head",
             "icon": "fa-solid fa-users-viewfinder",
             "desc": "Dynamic Top-N parameter filtering ranking modern grid champions and telemetry outliers across career points, win rates, and podium conversion ratios.",
-            "stat": "→ TOP N DYNAMIC FILTERING"
+            "stat": "TOP N DYNAMIC FILTERING"
         },
         {
             "id": "points_progression",
             "title": "Points Progression",
             "icon": "fa-solid fa-chart-line",
             "desc": "Championship point curves tracking Red Bull Racing (8,006 pts) and Mercedes-AMG (7,790 pts) across 17 competitive seasons (2010–2026).",
-            "stat": "→ 17 SEASONS (2010–2026)"
+            "stat": "17 SEASONS (2010–2026)"
         },
         {
             "id": "reliability",
             "title": "Weather & Safety Cars",
             "icon": "fa-solid fa-triangle-exclamation",
             "desc": "DNF attrition diagnostics categorizing power unit, collision, and mechanical failures, highlighting the 91.4% modern grid completion benchmark.",
-            "stat": "→ DNF REASON & ATTRITION DIAGNOSTICS"
+            "stat": "DNF REASON & ATTRITION DIAGNOSTICS"
         }
     ],
     
@@ -145,6 +146,7 @@ def index():
         author_name=CONFIG["AUTHOR_NAME"],
         author_handle=CONFIG["AUTHOR_HANDLE"],
         workbook_name=CONFIG["WORKBOOK_NAME"],
+        story_workbook_name=CONFIG.get("STORY_WORKBOOK_NAME", CONFIG["WORKBOOK_NAME"]),
         tableau_dashboard_url=CONFIG["TABLEAU_DASHBOARD_URL"],
         tableau_story_url=CONFIG["TABLEAU_STORY_URL"],
         tableau_dashboard_embed_url=CONFIG.get("TABLEAU_DASHBOARD_EMBED_URL", CONFIG["TABLEAU_DASHBOARD_URL"]),
@@ -165,10 +167,13 @@ def get_config():
     return jsonify({
         "status": "success",
         "author": CONFIG["AUTHOR_NAME"],
-        "tableau_public_profile": f"https://public.tableau.com/app/profile/{CONFIG['AUTHOR_HANDLE'].replace(' ', '.')}",
+        "tableau_profile": CONFIG["AUTHOR_HANDLE"],
         "workbook_name": CONFIG["WORKBOOK_NAME"],
+        "story_workbook_name": CONFIG.get("STORY_WORKBOOK_NAME", CONFIG["WORKBOOK_NAME"]),
         "tableau_dashboard_url": CONFIG["TABLEAU_DASHBOARD_URL"],
         "tableau_story_url": CONFIG["TABLEAU_STORY_URL"],
+        "tableau_dashboard_embed_url": CONFIG["TABLEAU_DASHBOARD_EMBED_URL"],
+        "tableau_story_embed_url": CONFIG["TABLEAU_STORY_EMBED_URL"],
         "kpis": CONFIG["KPIS"]
     })
 

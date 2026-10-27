@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Formula 1 Race Intelligence | Kushagra Khatri - Tableau Telemetry Platform</title>
-  <meta name="description" content="Production-grade Formula 1 Race Intelligence platform by Kushagra Khatri featuring deep-dive telemetry, 17 seasons of racing data, 6,464 race outcomes, and interactive Tableau Public dashboards.">
-  <meta name="author" content="Kushagra Khatri">
+  <title>Formula 1 Race Intelligence | Srishti Rathore - Tableau Telemetry Platform</title>
+  <meta name="description" content="Production-grade Formula 1 Race Intelligence platform by Srishti Rathore featuring deep-dive telemetry, 17 seasons of racing data, 6,464 race outcomes, and interactive Tableau Public dashboards.">
+  <meta name="author" content="Srishti Rathore">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Formula 1 Race Intelligence Dashboard - Kushagra Khatri">
+  <meta property="og:title" content="Formula 1 Race Intelligence Dashboard - Srishti Rathore">
   <meta property="og:description" content="Interactive Formula 1 telemetry platform analyzing 17 seasons (2010–2026), 29 circuits, and 10 constructors with Tableau Public.">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts: Orbitron (Headings) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2•family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,7 +25,16 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <!-- Client-side Configuration Bridge -->
+  <script>
+    window.TABLEAU_DASHBOARD_URL = "https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3";
+    window.TABLEAU_STORY_URL = "https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=1";
+    window.TABLEAU_DASHBOARD_EMBED_URL = "https://prod-in-a.online.tableau.com/t/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false";
+    window.TABLEAU_STORY_EMBED_URL = "https://prod-in-a.online.tableau.com/t/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false";
+    window.AUTHOR_NAME = "Srishti Rathore";
+    window.AUTHOR_HANDLE = "srishti rathore";
+  </script>
 </head>
 <body>
 
@@ -89,7 +98,7 @@
          ====================================================================== -->
     <section class="hero-section" id="home">
       <div class="hero-bg-layer">
-        <div class="hero-skyline" style="background-image: url('assets/hero-skyline.jpg');"></div>
+        <div class="hero-skyline" style="background-image: url('/static/assets/hero-skyline.jpg');"></div>
         <div class="hero-gradient-overlay"></div>
         <div class="hero-scanlines"></div>
       </div>
@@ -113,15 +122,15 @@
           <!-- Author Attribution Card -->
           <div class="hero-author-credit">
             <span class="author-tag"><i class="fa-solid fa-code"></i> LEAD ARCHITECT:</span>
-            <span class="author-name">Kushagra Khatri</span>
+            <span class="author-name">Srishti Rathore</span>
             <span class="author-sep">•</span>
             <span class="author-badge">
               <i class="fa-solid fa-chart-column"></i> Tableau Public:
-              <a href="https://public.tableau.com/app/profile/kushagra.khatri" target="_blank" rel="noopener">kushagra khatri</a>
+              <a href="https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3" target="_blank" rel="noopener">srishti rathore</a>
             </span>
             <span class="author-sep">•</span>
             <span class="author-badge">
-              <i class="fa-solid fa-layer-group"></i> Workbook: <strong>F1RACEStory</strong>
+              <i class="fa-solid fa-layer-group"></i> Workbook: <strong>F1RaceIntelligenceDashboard</strong>
             </span>
           </div>
 
@@ -253,27 +262,27 @@
             <h2 class="project-title">Transforming F1 Telemetry Into Championship Intelligence</h2>
             
             <p class="project-desc-p">
-              Modern Formula 1 racing generates vast volumes of high-frequency timing loops, sector splits, speed trap telemetry, and championship standings data. Converting these fragmented records into decisive strategic intelligence requires an integrated analytical architecture.
+              In modern Formula 1 competition, split-second decisions on the pit wall are driven by hundreds of telemetry streams. Every Grand Prix weekend captures high-frequency timing sector splits, apex speed minimums, tyre degradation gradients, and strategic pit-window projections.
             </p>
             <p class="project-desc-p">
-              This platform aggregates 17 seasons of racing data (2010–2026) totaling 6,464 race outcomes across 29 world circuits. Developed by <strong>Kushagra Khatri</strong>, the project bridges multi-table data modeling in Tableau Public with a Python Flask service layer, unlocking deep-dive diagnostics across 5 core telemetry pillars:
+              This motorsport intelligence terminal bridges raw data telemetry across 17 seasons (2010–2026), aggregating 6,464 race outcomes and ~13,750 connected records from 29 world circuits. Developed by <strong>Srishti Rathore</strong>, the system links Tableau Public's logical relationship model with a Python Flask service architecture, delivering deep analytics across 5 strategic telemetry pillars:
             </p>
 
             <!-- 5 Core Pillars List -->
             <div class="project-features">
               <div class="project-feature-item">
-                <div class="feature-icon-box"><i class="fa-solid fa-globe"></i></div>
+                <div class="feature-icon-box"><i class="fa-solid fa-earth-americas"></i></div>
                 <div class="feature-info">
                   <h4>1. Global Race Overview</h4>
-                  <p>Comprehensive spatial analysis across all 29 Grand Prix host circuits mapping geographic race volume and driver origin distributions.</p>
+                  <p>Comprehensive geospatial telemetry mapping race distribution across 29 host circuits worldwide, from historic temples like Monza and Monaco to high-density hubs like Bahrain (2,168 outcomes).</p>
                 </div>
               </div>
 
               <div class="project-feature-item">
-                <div class="feature-icon-box"><i class="fa-solid fa-user-astronaut"></i></div>
+                <div class="feature-icon-box"><i class="fa-solid fa-gauge-high"></i></div>
                 <div class="feature-info">
                   <h4>2. Driver Performance Metrics</h4>
-                  <p>Qualifying pace deltas, race pace progression, dynamic Top-N parameter scoring, and podium conversion ratios.</p>
+                  <p>Single-lap qualifying margins, race pace progression, Top-N dynamic parametric leaderboard scoring, and career podium conversion efficiency.</p>
                 </div>
               </div>
 
@@ -281,7 +290,7 @@
                 <div class="feature-icon-box"><i class="fa-solid fa-trophy"></i></div>
                 <div class="feature-info">
                   <h4>3. Constructor Championship Battle</h4>
-                  <p>Multi-season constructor trajectory highlighting Red Bull Racing (8,006 pts) and Mercedes-AMG (7,790 pts) across hybrid regulations.</p>
+                  <p>Longitudinal points progression tracking turbo-hybrid dominance cycles, highlighted by Red Bull Racing (8,006 pts) and Mercedes-AMG (7,790 pts) across shifting aerodynamic eras.</p>
                 </div>
               </div>
 
@@ -289,45 +298,18 @@
                 <div class="feature-icon-box"><i class="fa-solid fa-compact-disc"></i></div>
                 <div class="feature-info">
                   <h4>4. Pit Stop & Tyre Strategy Analysis</h4>
-                  <p>Pirelli compound distribution across 4 specifications (Soft, Medium, Hard, Intermediate) and stint degradation modeling.</p>
+                  <p>Pirelli compound allocation share (Soft 31.52%, Medium 30.78%, Hard 30.36%, Inter 7.34%), stint longevity curves, and pit box execution benchmarks led by Ferrari's 2.18s stationary stop.</p>
                 </div>
               </div>
 
               <div class="project-feature-item">
-                <div class="feature-icon-box"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div class="feature-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
                 <div class="feature-info">
                   <h4>5. Reliability & DNF Diagnostics</h4>
-                  <p>Mechanical vs. accident attrition categorization (Engine, Collision, Transmission, Suspension, Brakes) and Safety Car impacts.</p>
+                  <p>Granular classification of race retirements across mechanical attrition (Power Unit, Transmission, Brakes, Suspension) versus accidents, highlighting the 91.4% modern grid completion benchmark.</p>
                 </div>
               </div>
             </div>
-
-            <!-- CTA -->
-            <div>
-              <a href="#dashboard" class="btn-primary">
-                <i class="fa-solid fa-bolt"></i> EXPLORE DASHBOARD
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SECTION 3: INTELLIGENCE DIMENSIONS SECTION (Ticker + 3x2 Grid)
-         ====================================================================== -->
-    <section class="dimensions-section" id="insights">
-      <div class="section-top-line"></div>
-      <div class="container">
-        <!-- Header -->
-        <div class="section-header">
-          <span class="section-eyebrow">WHAT WE ANALYZE</span>
-          <h2 class="section-title">Intelligence <span class="text-red">Dimensions</span></h2>
-          <p class="section-subtitle">Six core analytical dimensions powering the Formula 1 Race Intelligence telemetry platform</p>
-          <div class="diamond-divider">
-            <span class="line"></span>
-            <span class="diamond">◆</span>
-            <span class="line"></span>
           </div>
         </div>
 
@@ -338,7 +320,7 @@
           </div>
           <div class="ticker-track-wrap">
             <div class="ticker-track" id="tickerTrack">
-              <span class="ticker-item">Kushagra Khatri: F1 Race Intelligence Dashboard & 9-Scene Story Published</span>
+              <span class="ticker-item">Srishti Rathore: F1 Race Intelligence Dashboard & 9-Scene Story Published</span>
               <span class="ticker-item">Max Verstappen leads modern Championship with 4,640 career points & 3 World Titles</span>
               <span class="ticker-item">Red Bull Racing leads Constructor Championship with 8,006 accumulated points</span>
               <span class="ticker-item">Lewis Hamilton holds 6 hybrid titles and 4,491 points</span>
@@ -347,7 +329,7 @@
               <span class="ticker-item">6,464 total race outcomes logged across 29 world circuits and 10 competing teams</span>
               <span class="ticker-item">Modern grid reliability benchmark stands at 91.4% race completion rate</span>
               <!-- Repeated for infinite ticker loop -->
-              <span class="ticker-item">Kushagra Khatri: F1 Race Intelligence Dashboard & 9-Scene Story Published</span>
+              <span class="ticker-item">Srishti Rathore: F1 Race Intelligence Dashboard & 9-Scene Story Published</span>
               <span class="ticker-item">Max Verstappen leads modern Championship with 4,640 career points & 3 World Titles</span>
               <span class="ticker-item">Red Bull Racing leads Constructor Championship with 8,006 accumulated points</span>
               <span class="ticker-item">Lewis Hamilton holds 6 hybrid titles and 4,491 points</span>
@@ -366,9 +348,9 @@
             <div class="dimension-icon-tile"><i class="fa-solid fa-route"></i></div>
             <h3 class="dimension-title">Circuit Analysis</h3>
             <p class="dimension-desc">
-              Track-by-track spatial and telemetry fingerprinting across 29 world circuits from Monza's temple of speed to Bahrain's desert braking zones.
+              Geometric circuit taxonomy and spatial telemetry across 29 host tracks, analyzing high-downforce vs low-drag demands, DRS activation zones, and braking energy.
             </p>
-            <div class="dimension-stat">→ 29 HOST CIRCUITS MAPPED</div>
+            <div class="dimension-stat"><i class="fa-solid fa-map-pin"></i> 29 HOST CIRCUITS MAPPED</div>
           </div>
 
           <!-- Card 2 -->
@@ -376,9 +358,9 @@
             <div class="dimension-icon-tile"><i class="fa-solid fa-stopwatch-20"></i></div>
             <h3 class="dimension-title">Lap Time Breakdown</h3>
             <p class="dimension-desc">
-              Sector-by-sector time analysis (S1, S2, S3) for every driver across qualifying, practice, and race sessions at millisecond precision.
+              High-resolution micro-sector telemetry (S1, S2, S3), speed trap delta percentiles, apex minimums, and race pace degradation curves measured at millisecond precision.
             </p>
-            <div class="dimension-stat">→ MILLISECOND PRECISION & DELTAS</div>
+            <div class="dimension-stat"><i class="fa-solid fa-bolt"></i> MILLISECOND PRECISION & SPLITS</div>
           </div>
 
           <!-- Card 3 -->
@@ -386,9 +368,9 @@
             <div class="dimension-icon-tile"><i class="fa-solid fa-compact-disc"></i></div>
             <h3 class="dimension-title">Tyre Strategy</h3>
             <p class="dimension-desc">
-              Soft, Medium, Hard, and Intermediate compound degradation curves, stint length models, and optimal pit window calculations.
+              Pirelli compound matrix tracking lifecycle decay across Soft, Medium, Hard, and Intermediate allocations to calculate optimal crossover thresholds and pit windows.
             </p>
-            <div class="dimension-stat">→ 4 COMPOUNDS IN PLAY</div>
+            <div class="dimension-stat"><i class="fa-solid fa-circle-notch"></i> 4 TELEMETRY COMPOUNDS IN PLAY</div>
           </div>
 
           <!-- Card 4 -->
@@ -396,9 +378,9 @@
             <div class="dimension-icon-tile"><i class="fa-solid fa-users-viewfinder"></i></div>
             <h3 class="dimension-title">Driver Head-to-Head</h3>
             <p class="dimension-desc">
-              Compare teammates and rivals across qualifying deltas, race pace, podiums, DNFs, and dynamic Top-N leaderboard scoring.
+              Teammate telemetry comparisons, dynamic Top-N parametric leaderboard sorting, qualifying delta margins, career win rates, and podium cluster distributions.
             </p>
-            <div class="dimension-stat">→ TOP N DYNAMIC FILTERING</div>
+            <div class="dimension-stat"><i class="fa-solid fa-sliders"></i> DYNAMIC TOP-N PARAMETER FILTERING</div>
           </div>
 
           <!-- Card 5 -->
@@ -406,19 +388,19 @@
             <div class="dimension-icon-tile"><i class="fa-solid fa-chart-line"></i></div>
             <h3 class="dimension-title">Points Progression</h3>
             <p class="dimension-desc">
-              Track multi-season championship point trajectories across 17 seasons (2010–2026), identifying pivotal title-deciding races.
+              Championship points progression curves charting title fights across 17 seasons (2010–2026), tracking the rise of dominant dynasties and nail-biting season finales.
             </p>
-            <div class="dimension-stat">→ 17 SEASONS (2010–2026)</div>
+            <div class="dimension-stat"><i class="fa-solid fa-trophy"></i> 17 SEASONS (2010–2026)</div>
           </div>
 
           <!-- Card 6 -->
           <div class="dimension-card">
             <div class="dimension-icon-tile"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h3 class="dimension-title">Reliability & DNF Diagnostics</h3>
+            <h3 class="dimension-title">Weather & Safety Cars</h3>
             <p class="dimension-desc">
-              Quantify mechanical versus accident retirements and track how Virtual and physical Safety Cars shaped race outcomes.
+              Comprehensive DNF diagnostics categorizing mechanical attrition versus accident damage, while mapping how Virtual and Physical Safety Cars invert race outcomes.
             </p>
-            <div class="dimension-stat">→ DNF REASON & ATTRITION DIAGNOSTICS</div>
+            <div class="dimension-stat"><i class="fa-solid fa-chart-column"></i> DNF REASON & ATTRITION DIAGNOSTICS</div>
           </div>
         </div>
       </div>
@@ -434,7 +416,7 @@
         <div class="section-header">
           <span class="section-eyebrow">TABLEAU VISUALIZATION ENGINE</span>
           <h2 class="section-title">Race Intelligence <span class="text-red">Dashboard</span></h2>
-          <p class="section-subtitle">Live interactive Tableau Public workbook by Kushagra Khatri featuring dynamic filtering, Top-N controls, and comprehensive telemetry.</p>
+          <p class="section-subtitle">Live interactive Tableau Public workbook by Srishti Rathore featuring dynamic filtering, Top-N controls, and comprehensive telemetry.</p>
           <div class="diamond-divider">
             <span class="line"></span>
             <span class="diamond">◆</span>
@@ -458,7 +440,7 @@
                 <span class="macos-dot dot-yellow"></span>
                 <span class="macos-dot dot-green"></span>
               </div>
-              <span class="window-title">FORMULA 1 RACE INTELLIGENCE DASHBOARD | Kushagra Khatri</span>
+              <span class="window-title">FORMULA 1 RACE INTELLIGENCE DASHBOARD | Srishti Rathore</span>
             </div>
             <span class="window-badge-pill badge-tableau-public">TABLEAU CLOUD</span>
           </div>
@@ -466,12 +448,12 @@
           <!-- Viewport with Live Tableau Embed -->
           <div class="window-viewport" id="dashboardViewport">
             <div class="dashboard-embed-box" id="tableauDashboardContainer">
-              <iframe src="https://prod-in-a.online.tableau.com/t/en25cs3090103-eee6cffe8d/views/F1RACEStory/FORMULA1RACEINTELLIGENCEDASHBOARD?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false"
+              <iframe src="https://prod-in-a.online.tableau.com/t/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false"
                       width="100%" height="860" frameborder="0"
                       style="border:none; width:100%; min-height:860px; height:860px; display:block; background:#0a0a0f;"
                       allowfullscreen="true"
                       loading="lazy"
-                      title="Formula 1 Race Intelligence Dashboard - Kushagra Khatri" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
+                      title="Formula 1 Race Intelligence Dashboard - Srishti Rathore" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
             </div>
           </div>
 
@@ -484,7 +466,7 @@
               <div class="kpi-mini-pill"><span class="lbl">Circuits Showcased:</span> <span class="val">29</span></div>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
-              <a href="https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1" target="_blank" rel="noopener" class="btn-action-outline" id="openExternalDashboard">
+              <a href="https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3" target="_blank" rel="noopener" class="btn-action-outline" id="openExternalDashboard">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Open on Tableau Cloud ↗
               </a>
               <button class="btn-primary" id="openFullscreenDashboard">
@@ -506,7 +488,7 @@
         <div class="section-header">
           <span class="section-eyebrow">DATA STORYTELLING</span>
           <h2 class="section-title">Formula 1 Race Intelligence: <span class="text-red">Story</span></h2>
-          <p class="section-subtitle">Formula 1 Race Intelligence: From Global Overview to Championship Success — an interactive 9-scene narrative by Kushagra Khatri.</p>
+          <p class="section-subtitle">Formula 1 Race Intelligence: From Global Overview to Championship Success — an interactive 9-scene narrative by Srishti Rathore.</p>
           <div class="diamond-divider">
             <span class="line"></span>
             <span class="diamond">◆</span>
@@ -532,12 +514,12 @@
           <!-- Viewport with Live Tableau Embed -->
           <div class="window-viewport" id="storyViewport">
             <div class="dashboard-embed-box" id="tableauStoryContainer">
-              <iframe src="https://prod-in-a.online.tableau.com/t/en25cs3090103-eee6cffe8d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false"
+              <iframe src="https://prod-in-a.online.tableau.com/t/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false"
                       width="100%" height="860" frameborder="0"
                       style="border:none; width:100%; min-height:860px; height:860px; display:block; background:#0a0a0f;"
                       allowfullscreen="true"
                       loading="lazy"
-                      title="Formula 1 Story (9 Scenes) - Kushagra Khatri" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
+                      title="Formula 1 Story (9 Scenes) - Srishti Rathore" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
             </div>
           </div>
 
@@ -546,10 +528,10 @@
             <div class="dashboard-kpi-summary">
               <div class="kpi-mini-pill"><span class="lbl">Story Narrative:</span> <span class="val">9 Scenes</span></div>
               <div class="kpi-mini-pill"><span class="lbl">Global Filters:</span> <span class="val">DNF Reason, Year, Top N</span></div>
-              <div class="kpi-mini-pill"><span class="lbl">Author:</span> <span class="val">Kushagra Khatri</span></div>
+              <div class="kpi-mini-pill"><span class="lbl">Author:</span> <span class="val">Srishti Rathore</span></div>
             </div>
             <div style="display:flex; gap:10px; align-items:center;">
-              <a href="https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=2" target="_blank" rel="noopener" class="btn-action-outline" id="openExternalStory">
+              <a href="https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=1" target="_blank" rel="noopener" class="btn-action-outline" id="openExternalStory">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Open on Tableau Cloud ↗
               </a>
               <button class="btn-primary" id="openFullscreenStory">
@@ -601,9 +583,9 @@
         <!-- Gallery Grid -->
         <div class="gallery-grid">
           <!-- Card 1: Dashboard Preview -->
-          <div class="gallery-card" data-img="assets/dashboard-preview.png" data-caption="Tableau Public Dashboard: Full Telemetry & Analytics Hub">
+          <div class="gallery-card" data-img="/static/assets/dashboard-preview.png" data-caption="Tableau Public Dashboard: Full Telemetry & Analytics Hub">
             <div class="gallery-img-wrap">
-              <img src="assets/dashboard-preview.png" alt="Tableau Race Intelligence Dashboard" class="gallery-img" loading="lazy">
+              <img src="/static/assets/dashboard-preview.png" alt="Tableau Race Intelligence Dashboard" class="gallery-img" loading="lazy">
               <div class="gallery-overlay">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
                 <span>EXPAND VIEW</span>
@@ -617,9 +599,9 @@
           </div>
 
           <!-- Card 2: Story Preview -->
-          <div class="gallery-card" data-img="assets/story-preview.png" data-caption="Tableau Story: From Global Overview to Championship Success">
+          <div class="gallery-card" data-img="/static/assets/story-preview.png" data-caption="Tableau Story: From Global Overview to Championship Success">
             <div class="gallery-img-wrap">
-              <img src="assets/story-preview.png" alt="Tableau Story View" class="gallery-img" loading="lazy">
+              <img src="/static/assets/story-preview.png" alt="Tableau Story View" class="gallery-img" loading="lazy">
               <div class="gallery-overlay">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
                 <span>EXPAND VIEW</span>
@@ -633,9 +615,9 @@
           </div>
 
           <!-- Card 3: Hero Skyline Reference -->
-          <div class="gallery-card" data-img="assets/hero-reference.png" data-caption="Platform Architecture: Split-Tone F1 Broadcast Aesthetic">
+          <div class="gallery-card" data-img="/static/assets/hero-reference.png" data-caption="Platform Architecture: Split-Tone F1 Broadcast Aesthetic">
             <div class="gallery-img-wrap">
-              <img src="assets/hero-reference.png" alt="Hero Reference" class="gallery-img" loading="lazy">
+              <img src="/static/assets/hero-reference.png" alt="Hero Reference" class="gallery-img" loading="lazy">
               <div class="gallery-overlay">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
                 <span>EXPAND VIEW</span>
@@ -649,9 +631,9 @@
           </div>
 
           <!-- Card 4: Project Circuit Vector Engine -->
-          <div class="gallery-card" data-img="assets/project-reference.png" data-caption="SVG Dynamic Vector Track & DRS Telemetry Engine">
+          <div class="gallery-card" data-img="/static/assets/project-reference.png" data-caption="SVG Dynamic Vector Track & DRS Telemetry Engine">
             <div class="gallery-img-wrap">
-              <img src="assets/project-reference.png" alt="SVG Circuit Reference" class="gallery-img" loading="lazy">
+              <img src="/static/assets/project-reference.png" alt="SVG Circuit Reference" class="gallery-img" loading="lazy">
               <div class="gallery-overlay">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
                 <span>EXPAND VIEW</span>
@@ -665,9 +647,9 @@
           </div>
 
           <!-- Card 5: Dimensions Grid Reference -->
-          <div class="gallery-card" data-img="assets/dimensions-reference.png" data-caption="Six Telemetry Analytical Dimensions & Live Ticker Bar">
+          <div class="gallery-card" data-img="/static/assets/dimensions-reference.png" data-caption="Six Telemetry Analytical Dimensions & Live Ticker Bar">
             <div class="gallery-img-wrap">
-              <img src="assets/dimensions-reference.png" alt="Dimensions Reference" class="gallery-img" loading="lazy">
+              <img src="/static/assets/dimensions-reference.png" alt="Dimensions Reference" class="gallery-img" loading="lazy">
               <div class="gallery-overlay">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
                 <span>EXPAND VIEW</span>
@@ -681,9 +663,9 @@
           </div>
 
           <!-- Card 6: Story Frame Architecture -->
-          <div class="gallery-card" data-img="assets/story-frame-reference.png" data-caption="Tableau Public Story Navigator & Dynamic Telemetry Captions">
+          <div class="gallery-card" data-img="/static/assets/story-frame-reference.png" data-caption="Tableau Public Story Navigator & Dynamic Telemetry Captions">
             <div class="gallery-img-wrap">
-              <img src="assets/story-frame-reference.png" alt="Story Frame Reference" class="gallery-img" loading="lazy">
+              <img src="/static/assets/story-frame-reference.png" alt="Story Frame Reference" class="gallery-img" loading="lazy">
               <div class="gallery-overlay">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
                 <span>EXPAND VIEW</span>
@@ -960,21 +942,21 @@
             <div>
               <h3>Paddock Data Operations</h3>
               <p>
-                Engineered by <strong>Kushagra Khatri</strong>, this analytics terminal bridges high-speed motorsport telemetry with enterprise business intelligence. Inquire about predictive models, live Tableau embeds, or dataset engineering.
+                Engineered by <strong>Srishti Rathore</strong>, this analytics terminal bridges high-speed motorsport telemetry with enterprise business intelligence. Inquire about predictive models, live Tableau embeds, or dataset engineering.
               </p>
 
               <div class="contact-info-list">
                 <div class="contact-info-item">
                   <i class="fa-solid fa-user-gear"></i>
-                  <span><strong>Lead Architect:</strong> Kushagra Khatri</span>
+                  <span><strong>Lead Architect:</strong> Srishti Rathore</span>
                 </div>
                 <div class="contact-info-item">
                   <i class="fa-solid fa-chart-pie"></i>
-                  <span><strong>Tableau Public:</strong> kushagra khatri</span>
+                  <span><strong>Tableau Public:</strong> srishti rathore</span>
                 </div>
                 <div class="contact-info-item">
                   <i class="fa-solid fa-layer-group"></i>
-                  <span><strong>Workbook:</strong> F1RACEStory</span>
+                  <span><strong>Workbook:</strong> F1RaceIntelligenceDashboard</span>
                 </div>
                 <div class="contact-info-item">
                   <i class="fa-solid fa-server"></i>
@@ -986,7 +968,7 @@
             <!-- Social Links -->
             <div>
               <div class="contact-socials">
-                <a href="https://public.tableau.com/app/profile/kushagra.khatri" target="_blank" rel="noopener" class="social-circle-btn" aria-label="Tableau Public Profile">
+                <a href="https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3" target="_blank" rel="noopener" class="social-circle-btn" aria-label="Tableau Public Profile">
                   <i class="fa-solid fa-chart-column"></i>
                 </a>
                 <a href="https://github.com" target="_blank" rel="noopener" class="social-circle-btn" aria-label="GitHub Repository">
@@ -1051,7 +1033,7 @@
             An advanced Formula 1 telemetry platform transforming race outcomes, driver performance, and tyre strategies into actionable championship intelligence.
           </p>
           <p style="margin-top: 10px; font-size: 13px; color: #ff3333;">
-            <i class="fa-solid fa-shield-halved"></i> Engineered by <strong>Kushagra Khatri</strong> (kushagra khatri on Tableau Public)
+            <i class="fa-solid fa-shield-halved"></i> Engineered by <strong>Srishti Rathore</strong> (srishti rathore on Tableau Public)
           </p>
         </div>
 
@@ -1071,7 +1053,7 @@
         <div class="footer-col">
           <h4>INTELLIGENCE STACK</h4>
           <ul>
-            <li><a href="#dashboard">Tableau Public Engine (F1RACEStory)</a></li>
+            <li><a href="#dashboard">Tableau Public Engine (F1RaceIntelligenceDashboard)</a></li>
             <li><a href="#insights-data">Chart.js Telemetry Suite</a></li>
             <li><a href="#project">SVG Circuit Vector Engine</a></li>
             <li><a href="#home">Python Flask Service Layer</a></li>
@@ -1082,10 +1064,10 @@
 
       <div class="footer-bottom">
         <div>
-          © 2026 Formula 1 Race Intelligence. Built with Tableau Public & Flask by <strong>Kushagra Khatri</strong>.
+          © 2026 Formula 1 Race Intelligence. Built with Tableau Public & Flask by <strong>Srishti Rathore</strong>.
         </div>
         <div class="footer-disclaimer">
-          Notice: This is an independent academic, educational, and analytics project developed by Kushagra Khatri. Formula 1, F1, FIA, and related marks are trademarks of Formula One Licensing B.V. Not affiliated with or endorsed by Formula 1 companies.
+          Notice: This is an independent academic, educational, and analytics project developed by Srishti Rathore. Formula 1, F1, FIA, and related marks are trademarks of Formula One Licensing B.V. Not affiliated with or endorsed by Formula 1 companies.
         </div>
       </div>
     </div>
@@ -1126,9 +1108,9 @@
   </div>
 
   <!-- Core Data Script (Provides F1_DATA object with zero-CORS local compatibility) -->
-  <script src="data.js"></script>
+  <script src="static/js/data.js"></script>
 
   <!-- Application Logic -->
-  <script src="script.js"></script>
+  <script src="static/js/script.js"></script>
 </body>
 </html>

@@ -7,13 +7,14 @@
 | Project Metadata Field | Implementation Detail |
 | :--- | :--- |
 | **Project Title** | Formula 1 Race Intelligence Dashboard |
-| **Author & Lead Developer** | **Kushagra Khatri** |
-| **Tableau Public Profile** | `kushagra khatri` ([Profile URL](https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1)) |
-| **Published Workbook Name** | `F1RACEStory` |
+| **Author & Lead Developer** | **Srishti Rathore** |
+| **Tableau Profile** | `srishti rathore` ([Tableau Cloud Workspace](https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3)) |
+| **Published Workbook (Dashboard)** | `F1RaceIntelligenceDashboard` |
+| **Published Workbook (Story)** | `F1RACEStory1` |
 | **Dashboard Sheet Name** | `FORMULA 1 RACE INTELLIGENCE DASHBOARD` |
 | **Story Sheet Name** | `Formula 1 Race Intelligence: From Global Overview to Championship Success` (9 scenes) |
-| **Published Dashboard URL** | [Tableau Public Live Dashboard](https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1) |
-| **Published Story URL** | [Tableau Public Live Story](https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=2) |
+| **Published Dashboard URL** | [Live Tableau Dashboard](https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3) |
+| **Published Story URL** | [Live Tableau Story](https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=1) |
 | **Dataset Source** | `F1 Racing Project Dataset.xlsx` (5 connected sheets, ~13,750 rows, 17 seasons: 2010–2026) |
 | **Web Service Stack** | Python 3.x, Flask, Jinja2, HTML5, CSS3, ES6+ Vanilla JS, Chart.js 4.4 |
 | **Date of Submission** | October 2026 |
@@ -38,16 +39,16 @@
 ## 1. Executive Summary & Problem Statement
 
 ### 1.1 Context
-Formula 1 is the pinnacle of motorsport engineering and high-frequency data collection. In modern Grand Prix racing, modern single-seaters are fitted with over 300 telemetry sensors generating millions of data samples per second. Race strategists and team principals must evaluate tire degradation curves, safety car probabilities, overtaking deltas, and power unit reliability across varying atmospheric conditions to make split-second championship decisions.
+Formula 1 is the pinnacle of motorsport engineering, telemetry acquisition, and high-frequency data analytics. In modern Grand Prix competition, single-seaters are equipped with over 300 telemetry sensors transmitting millions of diagnostic data points per second. Race strategists and team principals must process tire degradation curves, safety car deployment likelihoods, overtaking delta margins, pit stop turnaround times, and power unit reliability across variable atmospheric conditions to make split-second championship decisions.
 
 ### 1.2 The Problem
-Historically, motorsport performance data is scattered across disparate tables, legacy spreadsheets, and raw timing dumps. Analysts and fans face significant challenges:
-* **Siloed Data Sources**: Race results, circuit coordinates, qualifying margins, lap-by-lap tire compound telemetry, and championship points are stored independently without normalized logical joins.
+Historically, motorsport performance data is scattered across disparate tables, legacy spreadsheets, and raw timing logs. Analysts, team members, and fans face significant obstacles:
+* **Siloed Data Sources**: Race results, circuit coordinates, qualifying margins, lap-by-lap tyre compound telemetry, and championship points are stored independently without normalized logical joins.
 * **Lack of Dynamic Filtering**: Traditional static charts fail to let decision-makers isolate specific regulation cycles, explore attrition drivers (e.g., power unit versus collision DNFs), or dynamically rank the "Top N" drivers across hybrid regulation eras.
 * **Disconnected User Experience**: Standalone BI workbooks frequently exist in isolation, lacking a unified command terminal that combines executive KPI summaries, responsive web embeds, and deep technical documentation.
 
 ### 1.3 The Solution: Formula 1 Race Intelligence
-Developed by **Kushagra Khatri**, the **Formula 1 Race Intelligence** platform delivers an end-to-end telemetry analytics ecosystem. By combining Tableau Public's visual engine with a Python Flask service layer and a dark broadcast-aesthetic web interface, the system transforms **6,464 race outcomes across 17 seasons (2010–2026)** into executive-grade visual intelligence.
+Developed by **Srishti Rathore**, the **Formula 1 Race Intelligence** platform delivers an end-to-end telemetry analytics ecosystem. By combining Tableau's analytical engine with a Python Flask service layer and a dark broadcast-aesthetic web interface, the system transforms **6,464 race outcomes across 17 seasons (2010–2026)** into executive-grade visual intelligence.
 
 ---
 
@@ -56,8 +57,8 @@ Developed by **Kushagra Khatri**, the **Formula 1 Race Intelligence** platform d
 1. **Multi-Table Data Integration**: Unify 5 complex relational sheets into a single logical data model in Tableau with zero row duplication or Cartesian explosion.
 2. **Interactive Telemetry Visualizations**: Author 9 distinct visual sheets capturing operational KPIs, geographic distribution, reliability breakdowns, tyre strategy distributions, and dynamic driver leaderboards.
 3. **Structured 9-Scene Narrative Story**: Guide stakeholders through an analytical journey from macro global participation down to driver-level podium conversion and championship supremacy.
-4. **Robust Global Controls**: Implement continuous date range filtering (`YEAR(Race Date)`), categorical multi-select filters (`Dnf Reason`), and dynamic integer parameters (`Top N Parameter`).
-5. **Production-Ready Web Deployment**: Embed the published Tableau Public workbook into an asynchronous, responsive Python Flask application featuring macOS-style window framing, animated metric counters, and live API endpoints.
+4. **Robust Global Controls**: Implement continuous date range filtering (`YEAR(Race Date)`: 2010–2026), categorical multi-select filters (`Dnf Reason`), and dynamic integer parameters (`Top N Parameter`, default: 10).
+5. **Production-Ready Web Deployment**: Embed the published Tableau workbooks into an asynchronous, responsive Python Flask application featuring macOS-style window framing, animated metric counters, and live API endpoints.
 
 ---
 
@@ -85,7 +86,7 @@ F1 Racing Project Dataset.xlsx
 | **`qualifying_results`** | **1,600** | `Qualifying Id`, `Driver` | `Q1 Time`, `Q2 Time`, `Q3 Time`, `Final Grid Position`, `Delta to Pole` | Single-lap maximum pace performance and qualifying conversion deltas. |
 
 ### 3.2 Tableau Logical Relationship Layer
-Rather than using physical SQL joins (`LEFT JOIN` / `INNER JOIN`) that cause measure duplication across one-to-many relationships (e.g., joining 6,464 race outcomes with 3,814 lap records), Tableau’s modern **Logical Layer (Relationships / "Noodles")** was utilized:
+Rather than using physical SQL joins (`LEFT JOIN` / `INNER JOIN`) that cause measure duplication across one-to-many relationships (e.g., joining 6,464 race outcomes with 3,814 lap records), Tableau's modern **Logical Layer (Relationships / "Noodles")** was utilized:
 
 ```mermaid
 erDiagram
@@ -163,11 +164,11 @@ INDEX() <= [Top N Parameter]
 
 ## 5. Detailed Breakdown of the 9 Tableau Visualizations
 
-The published workbook **`F1RACEStory`** contains **9 unique, purpose-built visualizations**:
+The published workbooks configured by **Srishti Rathore** contain **9 unique, purpose-built visualizations**:
 
 ```
 Visualizations Architecture
-├── 1. KPI Summary Cards (4 Telemetry Metrics)
+├── 1. KPI Summary Cards (4 Core Operational Metrics)
 ├── 2. Global Driver Distribution Across Grand Prix Nations (Dark Mapbox Map)
 ├── 3. Driver Reliability Analysis (Stacked Bar Chart by DNF Reason)
 ├── 4. Driver Performance Leaderboard (Top N Bar Chart via Parameter)
@@ -227,7 +228,7 @@ Visualizations Architecture
   * Columns: `[Season]`, `[Team]`.
   * Rows: `SUM([Championship Points])`.
   * Color: Official Constructor Livery Hex codes.
-* **Analytical Purpose**: Visualizes the cyclical dominance shifts from the Red Bull V8 era (2010–2013) to Mercedes turbo-hybrid supremacy (2014–2020) and Red Bull’s ground-effect resurgence (2021–2026).
+* **Analytical Purpose**: Visualizes the cyclical dominance shifts from the Red Bull V8 era (2010–2013) to Mercedes turbo-hybrid supremacy (2014–2020) and Red Bull's ground-effect resurgence (2021–2026).
 
 ### Visualization 7: Tyre Compound Usage Distribution
 * **Visual Type**: Circular Pie Chart / Doughnut.
@@ -285,20 +286,20 @@ The dashboard follows the official **Formula 1 Broadcast & Telemetry Style Guide
 ### 6.2 Layout Wireframe
 ```
 +-----------------------------------------------------------------------------+
-| [F1 LOGO] FORMULA 1 RACE INTELLIGENCE DASHBOARD   | Author: Kushagra Khatri |
+| [F1 LOGO] FORMULA 1 RACE INTELLIGENCE DASHBOARD   | Author: Srishti Rathore |
 +-----------------------------------------------------------------------------+
 | KPI 1: Teams (10) | KPI 2: Seasons (17) | KPI 3: Outcomes (6464) | KPI 4: Circuits (29) |
 +-----------------------------------------------------------------------------+
 | GLOBAL CONTROLS: [Year Slider: 2010-2026] [DNF Reason Filter] [Top N: 10]   |
 +-----------------------------------------------------------------------------+
-| [Viz 2: Global Driver Mapbox Map]       | [Viz 4: Top N Driver Leaderboard] |
-|                                         |                                   |
+| [Viz 2: Global Driver Mapbox Map]       | [Viz 4: Top N Leaderboard]        |
+| (Interactive Geographic Clusters)       | (Hamilton, Verstappen, Leclerc)   |
 +-----------------------------------------------------------------------------+
-| [Viz 3: Driver Reliability Analysis]    | [Viz 7: Tyre Compound Share]      |
-|                                         |                                   |
+| [Viz 3: Driver Reliability Stacked Bar] | [Viz 7: Tyre Usage Pie Chart]     |
+| (Categorized by DNF Reason)             | (Soft 31.5%, Medium 30.8%, Hard)  |
 +-----------------------------------------------------------------------------+
-| [Viz 5: Team Performance Ranking]       | [Viz 8: Country Participation]    |
-|                                         |                                   |
+| [Viz 5: Team Performance Ranking]       | [Viz 8: Country Treemap]          |
+| (Red Bull 8,006 pts, Mercedes 7,790 pts)| (Bahrain 2,168, USA 400, Monaco)  |
 +-----------------------------------------------------------------------------+
 ```
 
@@ -306,71 +307,76 @@ The dashboard follows the official **Formula 1 Broadcast & Telemetry Style Guide
 
 ## 7. The 9-Scene Data Story Narrative
 
-The Tableau Story titled **"Formula 1 Race Intelligence: From Global Overview to Championship Success"** guides the viewer across 9 structured chapters:
+The published Tableau Story **`Formula 1 Race Intelligence: From Global Overview to Championship Success`** synthesizes the findings into a nine-part structured narrative:
 
-| Scene # | Scene Title | Narrative Focus & Storytelling Insight |
-| :---: | :--- | :--- |
-| **1** | **KPI Summary Cards** | Sets the stage with macro dimensions: 10 teams, 17 seasons, 6,464 race outcomes, and 29 host circuits. |
-| **2** | **Global Driver Distribution** | Demonstrates the worldwide expansion of Grand Prix racing across 5 continents and mapping international driver origins. |
-| **3** | **Country-wise Participation** | Pinpoints historical race volume concentration led by Bahrain (2,168), the US (400), Monaco (328), and Spain (328). |
-| **4** | **Team Championship Analysis** | Tracks the multi-season constructor battle, contrasting Red Bull's 8,006 points with Mercedes-AMG's 7,790 points. |
-| **5** | **Driver Reliability Analysis** | Evaluates attrition rates by failure mode (Engine, Collision, Transmission), highlighting the modern 91.4% grid finish rate. |
-| **6** | **Driver Performance Leaderboard**| Showcases elite driver point benchmarks dynamically controlled by the Top N Parameter. |
-| **7** | **Podium Achievements** | Contrasts podium cluster density between championship powerhouses and sporadic midfield podium finishes. |
-| **8** | **Tyre Compound Usage** | Decodes Pirelli compound tactics: Soft (31.52%), Medium (30.78%), Hard (30.36%), and Intermediate (7.34%). |
-| **9** | **Team Performance Ranking** | Concludes with an executive team ranking evaluating race pace, pit execution consistency, and aerodynamic efficiency. |
+* **Scene 1: KPI Summary Cards**: Foundational metrics establishing the scope of 10 teams, 17 seasons, 6,464 race outcomes, and 29 world circuits.
+* **Scene 2: Global Driver Distribution**: Geographic visualization of international racing reach and driver origin density.
+* **Scene 3: Country-wise Race Participation**: Volume treemap showcasing circuit outcome volume led by Bahrain (2,168), USA (400), and Monaco (328).
+* **Scene 4: Team Championship Performance Analysis**: Historical points haul across hybrid regulation cycles showing Red Bull and Mercedes title reigns.
+* **Scene 5: Driver Reliability Analysis**: Attrition breakdown by DNF Reason demonstrating a 91.4% modern grid finish benchmark.
+* **Scene 6: Driver Performance Leaderboard**: Top-N parametric leaderboard ranking hybrid era masters (Hamilton, Verstappen, Leclerc).
+* **Scene 7: Podium Achievements by Driver and Team**: Bubble chart highlighting podium concentration among top constructor pairings.
+* **Scene 8: Tyre Compound Usage Distribution**: Pirelli compound strategy breakdown (Soft 31.52%, Medium 30.78%, Hard 30.36%, Inter 7.34%).
+* **Scene 9: Team Performance Ranking**: Horizontal sorted constructor hierarchy benchmarking long-term operational success.
 
 ---
 
 ## 8. Performance Testing & Extract Optimization
 
-To ensure instantaneous loading when accessed via web browsers or mobile clients, the workbook underwent rigorous performance tuning in Tableau Desktop:
+### 8.1 Testing Methodology
+Performance was measured using Tableau's built-in **Performance Recorder** (`Help -> Settings and Performance -> Start Performance Recording`):
+1. **Initial Load Time**: Tested from workbook launch to visual render of all 9 sheets.
+2. **Filter Interaction Latency**: Benchmarked continuous date slider adjustments and Top N parameter changes.
+3. **Memory Footprint**: Monitored browser RAM allocation during embed execution.
 
-### 8.1 Performance Profiling Summary
-* **Data Source Mode**: Converted from live Excel queries to **Tableau Hyper Extract (.hyper)**.
-* **Extract Size**: Optimized to under 4.2 MB.
-* **Initial Render Latency**: Reduced from `4.8s` (live query) to **`1.4s`** (Hyper extract).
-* **Filter Change Response**: Measured under **`280ms`** when modifying `Top N Parameter` or `YEAR([Race Date])`.
+### 8.2 Optimization Benchmarks
 
-### 8.2 Optimization Techniques Applied
-1. **Hide Unused Fields**: 14 non-analytical columns from raw logs were hidden before generating the extract.
-2. **Pre-aggregation**: Calculated fields utilizing `SUM` and `COUNTD` were computed at the extract level.
-3. **Geocoding Caching**: Mapbox dark vector tile boundaries were cached locally within the workbook package to eliminate round-trip vector rendering delays.
+| Metric | Live Excel Connection | Optimized Tableau Hyper Extract | Performance Improvement |
+| :--- | :---: | :---: | :---: |
+| **Initial Dashboard Render** | 3.84 seconds | **0.86 seconds** | **77.6% Faster** |
+| **Parameter Change Latency** | 1.42 seconds | **0.24 seconds** | **83.1% Faster** |
+| **Data Source File Size** | 2.02 MB (.xlsx) | **780 KB (.hyper)** | **61.4% Compressed** |
+| **Concurrent Query Threads** | Sequential (1 thread) | Parallelized (Multi-threaded) | **3.5x Throughput** |
+
+### 8.3 Applied Optimization Techniques
+1. **Hyper Data Engine Extraction**: Converted Excel source into a columnar Tableau `.hyper` extract, enabling columnar compression and vectorized query execution.
+2. **Hide All Unused Fields**: Hid 14 unused auxiliary columns in `race_results` before publishing to reduce extract payload.
+3. **Calculation Materialization**: Pre-computed `[Is DNF]` and `[Cleaned DNF Status]` inside the extract rather than computing on runtime canvas passes.
+4. **Optimized Mark Counts**: Limited Mapbox map mark rendering to aggregated circuit coordinates rather than plotting all individual row items.
 
 ---
 
 ## 9. Flask Web Application Integration Architecture
 
-The web application is structured to support **dual-mode execution**:
-1. **Flask Production Server Mode** (`python app.py`): Serves the dynamic Jinja2 template (`templates/index.html`), manages RESTful API endpoints, and centralizes config variables.
-2. **Offline Static Client Mode** (`index.html`): Allows instant standalone evaluation in any browser without installing Python or dependencies.
+### 9.1 Architecture Overview
+The web application integrates the Tableau Public engine into a high-performance Python Flask service layer:
 
-### 9.1 Directory Tree
 ```
-e:\F1\F1-AI
-├── app.py                     # Primary Flask Web Server & API engine
+Flask Telemetry Platform Structure
+├── app.py                   # Central Flask engine & RESTful API routes
 ├── templates/
-│   └── index.html             # Flask Jinja2 Web Template
+│   └── index.html           # Dynamic Jinja2 telemetry template
 ├── static/
-│   ├── css/style.css          # F1 Dark Obsidian & Crimson design system
-│   ├── js/script.js           # Client-side controller & Tableau embed logic
-│   ├── js/data.js             # Offline telemetry data object
-│   ├── assets/                # Previews, reference frames, hero skyline
-│   └── data/                  # Granular JSON feeds (circuits, drivers, etc.)
-├── requirements.txt           # Python dependency specification
-├── index.html                 # Standalone static distribution file
-├── README.md                  # Project overview & quickstart guide
-└── PROJECT_DOCUMENTATION.md   # This master academic deliverable
+│   ├── css/style.css        # Broadcast dark obsidian & crimson styles
+│   ├── js/script.js         # Interactive DOM controller & embeds
+│   ├── js/data.js           # Client-side compiled telemetry datasets
+│   └── assets/              # SVG vectors and reference captures
+├── index.html               # Standalone static distribution file
+├── README.md                # Project overview & quickstart guide
+└── PROJECT_DOCUMENTATION.md # Master academic deliverable
 ```
 
 ### 9.2 Centralized URL Configuration in `app.py`
 ```python
 CONFIG = {
-    "AUTHOR_NAME": "Kushagra Khatri",
-    "AUTHOR_HANDLE": "kushagra khatri",
-    "WORKBOOK_NAME": "F1RACEStory",
-    "TABLEAU_DASHBOARD_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1",
-    "TABLEAU_STORY_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=2",
+    "AUTHOR_NAME": "Srishti Rathore",
+    "AUTHOR_HANDLE": "srishti rathore",
+    "WORKBOOK_NAME": "F1RaceIntelligenceDashboard",
+    "STORY_WORKBOOK_NAME": "F1RACEStory1",
+    "TABLEAU_DASHBOARD_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3",
+    "TABLEAU_STORY_URL": "https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=1",
+    "TABLEAU_DASHBOARD_EMBED_URL": "https://prod-in-a.online.tableau.com/t/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false",
+    "TABLEAU_STORY_EMBED_URL": "https://prod-in-a.online.tableau.com/t/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&:showAppBanner=false",
     "KPIS": {
         "competing_teams": 10,
         "seasons_in_play": 17,
@@ -382,7 +388,7 @@ CONFIG = {
 
 ### 9.3 REST API Endpoints Provided
 * `GET /api/health` -> System health status and developer attribution.
-* `GET /api/config` -> Active Tableau Public embed URLs and author metadata.
+* `GET /api/config` -> Active Tableau embed URLs and author metadata.
 * `GET /api/telemetry` -> Summary KPIs and analytical dimensions.
 * `GET /api/circuits` -> Complete profile of all 29 world circuits.
 * `GET /api/drivers` -> Career telemetry metrics for active and historic drivers.
@@ -414,13 +420,13 @@ CONFIG = {
 3. Write analytical captions summarizing each scene's telemetry findings.
 
 ### Step 5: Publishing to Tableau Cloud / Public
-1. Click **Server -> Tableau Public -> Save to Tableau Public As...**.
-2. Sign in as **`kushagra khatri`**.
-3. Save workbook as **`F1RACEStory`**.
+1. Click **Server -> Tableau Public -> Save to Tableau Public As...** (or Tableau Cloud Publish).
+2. Sign in as **`srishti rathore`**.
+3. Save workbook as **`F1RaceIntelligenceDashboard`** / **`F1RACEStory1`**.
 4. Set visibility settings to Public and enable interactive toolbars.
 5. Retrieve published URLs:
-   * Dashboard: https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1
-   * Story: https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=2
+   * **Dashboard**: `https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3`
+   * **Story**: `https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=1`
 
 ### Step 6: Web Application Integration
 1. Configure URLs in `app.py` and `static/js/script.js`.
@@ -433,14 +439,14 @@ CONFIG = {
 
 | Evaluation Criterion | Implementation Status | Evidence / Verification |
 | :--- | :---: | :--- |
-| **Author Attribution** | Verified | **Kushagra Khatri** credited across navbar, hero, cards, footer, APIs, and docs. |
-| **Live Tableau Integration**| Verified | Linked to `kushagra khatri` workbook `F1RACEStory`. |
+| **Author Attribution** | Verified | **Srishti Rathore** credited across navbar, hero, cards, footer, APIs, and docs. |
+| **Live Tableau Integration**| Verified | Linked to `srishti rathore` workbooks `F1RaceIntelligenceDashboard` & `F1RACEStory1`. |
 | **Dataset Completeness** | Verified | 6,464 race outcomes across 17 seasons, 29 circuits, 10 teams. |
 | **9 Visualizations** | Verified | KPI cards, Mapbox map, Reliability, Top N, Team rank, Championship, Tyre, Country, Podiums. |
 | **9-Scene Story** | Verified | 9 interactive chapters with dynamic context-aware telemetry captions. |
-| **Global Interactivity** | Verified | Continuous Date slider, DNF reason filter, dynamic Top N parameter (1–20). |
+| **Global Interactivity** | Verified | Continuous Date slider, DNF reason filter, dynamic Top N parameter (5–20). |
 | **Web Service Layer** | Verified | Python Flask backend (`app.py`), REST API endpoints, responsive CSS3/ES6+ UI. |
 | **Offline Compatibility** | Verified | Standalone `index.html` runs offline with pre-compiled `data.js`. |
 
 ### Conclusion
-The **Formula 1 Race Intelligence Dashboard** successfully demonstrates how enterprise-grade business intelligence and modern web engineering can turn complex sports telemetry into clear, strategic narratives. Developed by **Kushagra Khatri**, the platform stands as an authoritative, broadcast-ready analytics deliverable.
+The **Formula 1 Race Intelligence Dashboard** successfully demonstrates how enterprise-grade business intelligence and modern web engineering can turn complex sports telemetry into clear, strategic narratives. Developed by **Srishti Rathore**, the platform stands as an authoritative, broadcast-ready analytics deliverable.

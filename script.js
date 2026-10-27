@@ -1,15 +1,15 @@
 /**
  * FORMULA 1 RACE INTELLIGENCE - INTERACTIVE JAVASCRIPT
  * Comprehensive Frontend Engine & Telemetry Visualizer
- * Developed by: Kushagra Khatri (Tableau Public: kushagra khatri)
+ * Developed by: Srishti Rathore (Tableau Public: srishti rathore)
  */
 
 // =============================================================================
 // 1. TABLEAU PUBLIC EMBED CONFIGURATION
-// Configured for Kushagra Khatri's Published Tableau Public Workbooks
+// Configured for Srishti Rathore's Published Tableau Workbooks
 // =============================================================================
-const DASHBOARD_URL = "https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=1";
-const STORY_URL = "https://prod-in-a.online.tableau.com/#/site/en25cs3090103-eee6cffe8d/views/F1RACEStory/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=2";
+const DASHBOARD_URL = (typeof window !== "undefined" && window.TABLEAU_DASHBOARD_URL) ? window.TABLEAU_DASHBOARD_URL : "https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RaceIntelligenceDashboard/FORMULA1RACEINTELLIGENCEDASHBOARD?:iid=3";
+const STORY_URL = (typeof window !== "undefined" && window.TABLEAU_STORY_URL) ? window.TABLEAU_STORY_URL : "https://prod-in-a.online.tableau.com/#/site/en25cs3090217-6559a41746/views/F1RACEStory1/Formula1RaceIntelligenceFromGlobalOverviewtoChampionshipSuccess?:iid=1";
 
 // 9 Story scenes definitions for interactive chapter navigator
 const STORY_POINTS_DATA = [
